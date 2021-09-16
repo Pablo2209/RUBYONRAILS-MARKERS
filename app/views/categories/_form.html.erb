@@ -2,10 +2,20 @@
   
   <h3>Complete the category</h3>
   <hr>
-  <a class="btn btn-primary" href="#" role="button"><%= link_to 'Markers', markers_path %> </a>
-  <a class="btn btn-primary" href="#" role="button"><%= link_to 'Types', types_path %> </a>
-  <a class="btn btn-primary" href="#" role="button"><%= link_to 'Api Json', api_json_path %> </a>
-  <a class="btn btn-primary" href="#" role="button"> <%= link_to 'Dashboard', root_path %> </a>
+
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Menu
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#"><%= link_to 'Markers', markers_path %> </a>
+    <a class="dropdown-item" href="#"><%= link_to 'Types', types_path %> </a>
+    <a class="dropdown-item" href="#"><%= link_to 'Api Json', api_json_path %> </a>
+  </div>
+ <%= link_to 'Dashboard', root_path %> 
+</div>
+
+ 
 
   <hr>
 
@@ -26,7 +36,7 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Description</th>
+          <th scope="col">Name</th>
           <th scope="col">Complete</th>
           <th scope="col">Description</th>
         </tr>
