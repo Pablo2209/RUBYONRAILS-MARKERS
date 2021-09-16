@@ -1,5 +1,7 @@
 <div class="container"><hr>
-
+  
+  <h3>Complete the category</h3>
+  <hr>
   <a class="btn btn-primary" href="#" role="button"><%= link_to 'Markers', markers_path %> </a>
   <a class="btn btn-primary" href="#" role="button"><%= link_to 'Types', types_path %> </a>
   <a class="btn btn-primary" href="#" role="button"><%= link_to 'Api Json', api_json_path %> </a>
@@ -20,24 +22,41 @@
         </ul>
       </div>
     <% end %>
-    
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Description</th>
+          <th scope="col">Complete</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td> <%= form.label :name %> </td>
+          <td> <%= form.text_field :name %> </td>
+          <td>Name category</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td> <%= form.label :type_id %> </td>
+          <td> <%= form.collection_select :type_id , Type.all, :id, :name, prompt: true  %> </td>
+          <td> Category type</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td> <%= form.label :public %> </td>
+          <td> <%= form.select :public,[false,true] %> </td>
+          <td> Select privacy</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td> <div class="actions"> </td>
+          <td><button type="button" class="btn btn-success"><%= form.submit data: {disable_with: "Creando"} %> </button></td>
+        </tr>
+      </tbody>
+    </table>
 
-    <div class="field">
-      <%= form.label :type_id %>
-      <%= form.collection_select :type_id , Type.all, :id, :name, prompt: true  %>
-    </div>
-
-    <div class="field">
-      <%= form.label :public %>
-      <%= form.select :public,[false,true] %>
-    </div>
-
-    <div class="actions">
-      <%= form.submit data: {disable_with: "Creando"} %>
-    </div><hr>
   <% end %>
 </div>
