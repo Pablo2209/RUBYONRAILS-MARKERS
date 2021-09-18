@@ -1,12 +1,13 @@
 
 
 <div class="container">
-    <h2 class="text-center">Dashboard</h2><hr> 
+    <h1 class="text-center">DASHBOARD</h1><hr> 
     <a class="btn btn-secondary" href="#" role="button"><%= link_to 'All Categories', categories_path %> </a>
     <hr>
     <div>
     <h2>Marcadores</h2>
     <%= pie_chart Marker.group(:name).count %>
+    <hr>
     </div>
     <h2>Categorias</h2>
     <%= pie_chart Category.group(:name).count %>
